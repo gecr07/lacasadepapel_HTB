@@ -20,9 +20,20 @@ ssh -i id_rsa dali@10.129.242.42 -D 1080
 # Puerto configurado tambien el proxychains si acepta sock5
 ```
 
+Para verificar que si tenemos acceso a los puertos de la maquina utiliza
+
+```
+proxychains nmap -p 1-10000 $target
+```
+
+Para iniciar el firefox con proxychains tienes que ver el output parecido a este:
+
+![image](https://github.com/gecr07/lacasadepapel_HTB/assets/63270579/a3fd1aec-53e8-42b8-9ec4-88a1e3fe9913)
 
 
+### LFI 
 
+Nos encontramos un LFI
 
 
 
