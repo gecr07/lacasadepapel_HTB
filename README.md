@@ -55,9 +55,19 @@ ps aux | grep "mem"
 ![image](https://github.com/gecr07/lacasadepapel_HTB/assets/63270579/6ca70276-05cd-41c6-bfc0-e268442d3766)
 
 
+Ya nos dimos cuenta que se esta ejecutando el memcache.ini periodicamente. No podemos acceder al archivo porque el propietario es root pero si podemos eliminar el archivo y crear otro porque esta el la carpta de profesor y somos ese usario si vemos los pemrisos tiene todos para esa carpeta...
+
+![image](https://github.com/gecr07/lacasadepapel_HTB/assets/63270579/8279baad-8c3d-4cc7-8cd8-a8c5ac7e2c74)
 
 
+Creamos un nuevo archivo y hacemos el bash SUID y esperamos..
 
+![image](https://github.com/gecr07/lacasadepapel_HTB/assets/63270579/f10c6178-0c9b-4f07-b0f8-24dbcc10747c)
+
+
+Y ya somos root....
+
+![image](https://github.com/gecr07/lacasadepapel_HTB/assets/63270579/f621095b-c733-40ff-b11c-839f5d0bd90f)
 
 
 
